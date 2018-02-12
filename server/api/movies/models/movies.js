@@ -2,14 +2,15 @@
 
 const mongoose = require('mongoose');
 
-
-const schemaMovies = new mongoose.Schema({ //mongoose nous donne une classe qui s'appelle schema 
+const Schema = mongoose.Schema;
+const schema = new Schema({ //mongoose nous donne une classe qui s'appelle schema 
 
 	vote_count: {
 		type: Number
 	},
 	id: {
-		type: Number
+		type: Number,
+		unique: true
 	},
 	video: {
 		type: Boolean
@@ -34,10 +35,7 @@ const schemaMovies = new mongoose.Schema({ //mongoose nous donne une classe qui 
 	original_title: {
 		type: String
 	},
-	genre_ids: [{
-		name: Number,
-		values:[]
-	}],
+	genre_ids: [],
 	backdrop_path: {
 		type: String
 	},
@@ -52,4 +50,4 @@ const schemaMovies = new mongoose.Schema({ //mongoose nous donne une classe qui 
 	}
 });
 
-module.exports = mongoose.model('movies', schemaMovies); // export classique en node js
+module.exports = mongoose.model('Movie', schema); // export classique en node js
