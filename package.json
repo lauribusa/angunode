@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/lauribusa/angunode/issues"
   },
-  "homepage": "https://github.com/lauribusa/angunode#readme"
+  "homepage": "https://github.com/lauribusa/angunode#readme",
+  "dependencies": {
+    "angular": "^1.6.9"
+  }
 }
