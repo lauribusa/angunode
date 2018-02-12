@@ -1,3 +1,5 @@
+const Movie = require('../models/movies');
+
 module.exports = {
     method: 'GET',
     path: '/get',
