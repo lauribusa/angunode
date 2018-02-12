@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi');
 const db = require('./database').db;
+const routes = require('./routes');
 
 // Create a server with a host and port
 const server = Hapi.server({ 
