@@ -1,22 +1,20 @@
 const Hapi = require('hapi');
 // Crée un serveur local sur le port 8000
-const server = new Hapi.Server();
-server.connection({
+const server = Hapi.server({ 
     host: 'localhost',
-    port: 8000
+    port: '8000' 
 });
-// Ajoute une route minimal de réponse
+
 server.route({
     method: 'GET',
-    path:'/',
+    path: '/',
     handler: function (request, reply) {
-        return reply('hello world');
+        reply('Hapi World!');
     }
 });
-// Démarre le serveur
 server.start((err) => {
-    if (err) {
+if (err) {
         throw err;
     }
-    console.log('Serveur disponible à:', server.info.uri);
+    console.log('Server running at: ${server.info.uri}');
 });
