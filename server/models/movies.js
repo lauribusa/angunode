@@ -48,7 +48,7 @@ const schemaMovies = new mongoose.Schema({ //mongoose nous donne une classe qui 
     },
     overview:{
         type:String
-    }
+    },
     release_date:{
         type:String
     }
