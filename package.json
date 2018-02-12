@@ -1,0 +1,24 @@
+{
+  "name": "angular-node-ex01",
+  "version": "0.0.1",
+  "description": "Node JS + angular",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauribusa/angunode.git"
+  },
+  "keywords": [
+    "node",
+    "angular",
+    "hacking"
+  ],
+  "author": "Lightbolt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lauribusa/angunode/issues"
+  },
+  "homepage": "https://github.com/lauribusa/angunode#readme"
+}
