@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/lauribusa/angunode#readme",
   "dependencies": {
-    "angular": "^1.6.9",
     "es6-promisify": "^6.0.0",
     "hapi": "^17.2.0",
     "mongoose": "^5.0.4"

@@ -1,22 +1,35 @@
+'use strict';
+
 const Hapi = require('hapi');
-// Crée un serveur local sur le port 8000
-const server = new Hapi.Server();
-server.connection({
-    host: 'localhost',
-    port: 8000
+
+// Create a server with a host and port
+const server = Hapi.server({ 
+    host: 'localhost', 
+    port: 8000 
 });
-// Ajoute une route minimal de réponse
+
+// Add the route
 server.route({
     method: 'GET',
-    path:'/',
-    handler: function (request, reply) {
-        return reply('hello world');
+    path:'/hello', 
+    handler: function (request, h) {
+
+        return 'hello world';
     }
 });
-// Démarre le serveur
-server.start((err) => {
-    if (err) {
-        throw err;
+
+// Start the server
+async function start() {
+
+    try {
+        await server.start();
     }
-    console.log('Serveur disponible à:', server.info.uri);
-});
+    catch (err) {
+        console.log(err);
+        process.exit(1);
+    }
+
+    console.log('Server running at:', server.info.uri);
+};
+
+start();
