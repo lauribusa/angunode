@@ -11,14 +11,7 @@ const server = Hapi.server({
 });
 
 // Add the route
-server.route({
-    method: 'GET',
-    path:'/', 
-    handler: function (request, h) {
-
-        return 'hello world';
-    }
-});
+server.route(routes);
 
 // Start the server
 async function start() {
