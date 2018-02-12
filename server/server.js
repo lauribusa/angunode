@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
+const db = require('./database').db;
 
 // Create a server with a host and port
 const server = Hapi.server({ 
@@ -11,7 +12,7 @@ const server = Hapi.server({
 // Add the route
 server.route({
     method: 'GET',
-    path:'/hello', 
+    path:'/', 
     handler: function (request, h) {
 
         return 'hello world';
@@ -33,3 +34,4 @@ async function start() {
 };
 
 start();
+
