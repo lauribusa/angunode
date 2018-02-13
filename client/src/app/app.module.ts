@@ -12,7 +12,7 @@ import { RouterModule, Router, Routes } from '@angular/router';
 
 
 export const routes: Routes = [
-  { path: 'movies/:id', component: MovieComponent }
+  { path: ':id', component: MovieComponent }
   // { path: 'movies', component: MoviesComponent },
 
 ];
