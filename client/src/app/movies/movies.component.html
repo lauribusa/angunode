@@ -1,15 +1,16 @@
-<ul class="listMovies">
-  <li *ngFor="let movie of films" class="MovieSheet">
+<div class="listMovies">
+  <div class="row" *ngFor="let chunk of visualMovies">
 
+      <div *ngFor="let movie of movies" class="MovieSheet" >
 
-    <span class="title">{{movie.original_title}}</span> <br>
+          <span class="title">{{movie.original_title}}</span> <br>
+          <span class="img"> <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="{{movie.original_title}}">  </span><br>
+          <span class="overview">{{movie.overview}}</span>
+          <a href="{{movie.id}}" class="buttonMore">En savoir plus</a>
 
-    <span class="img"> <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="{{movie.original_title}}">  </span><br>
-    <span class="overview">{{movie.overview}}</span>
-    <a href="movies/{{movie.id}}" class="buttonMore">En savoir plus</a>
+      </div>
 
+  </div>
 
-
-  </li>
-</ul>
+</div>
 

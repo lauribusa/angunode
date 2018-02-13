@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-movies',
@@ -7,20 +7,46 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+
+  movies: any = [];
+  visualMovies: any;
+
+
   constructor(public http: HttpClient) {
+    this.movies = [];
+    this.visualMovies = [];
 
   }
-  films: any = [];
+
 
   ngOnInit() {
     this.getMovie();
   }
 
   getMovie() {
-   return this.http.get('http://localhost:9000/api/movies')
-   .toPromise()
-   .then(result => {this.films = result;console.log(result);})
-   .catch(err => console.log(err));
- }
+    return this.http.get('http://localhost:9000/api/movies')
+      .toPromise()
+      .then(result => { this.movies = result; console.log(result); this.generateVisualMovies(); })
+      .catch(err => console.log(err));
+  }
+
+  generateVisualMovies() {
+    let tmpArray = [];
+    this.movies.map((element, i) => {
+      if (i % 4 === 0) {
+        if (tmpArray.length > 0) {
+          this.visualMovies.push(tmpArray);
+        }
+        tmpArray = [];
+        tmpArray.push(element);
+      } else {
+        tmpArray.push(element);
+        if (i === this.movies.length - 1 ) {
+          this.visualMovies.push(tmpArray);
+        }
+      }
+
+    });
+  }
 
 }
