@@ -1,6 +1,8 @@
 <ul>
-  <li *ngFor="let movie of result">
-    {{movie}}
+  <li *ngFor="let movie of films">
+    {{movie.original_title}}
+    ( {{movie.id}} )
+    
   </li>
 </ul>
 
