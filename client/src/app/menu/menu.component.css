@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #333;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+li{
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li a:hover {
+  background-color: #111;
+  border-bottom: 1px solid red;
+}
+.user{
+  float:right;
+  padding-right: 40px;
+}
