@@ -3,7 +3,7 @@ module.exports = {
     method: 'DELETE',
     path: '/api/movies/{id}',
     handler: async (req, rep)=>{
-        await Movie findOneAndRemove({id: req.params.id});
+        await Movie.findOneAndRemove({id: req.params.id});
         return 'movie deleted';
     }
 }
