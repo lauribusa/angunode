@@ -7,7 +7,7 @@ ul.listMovies {
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 50px;
   grid-row-gap: 50px;
-  margin: 0;
+  margin: 50px 0;
   padding: 0;
 }
 
