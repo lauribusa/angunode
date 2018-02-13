@@ -26,7 +26,7 @@ export class MoviesComponent implements OnInit {
   getMovie() {
     return this.http.get('http://localhost:9000/api/movies')
       .toPromise()
-      .then(result => { this.movies = result; console.log(result); this.generateVisualMovies(); })
+      .then(result => { this.movies = result; this.generateVisualMovies(); })
       .catch(err => console.log(err));
   }
 
@@ -47,6 +47,7 @@ export class MoviesComponent implements OnInit {
       }
 
     });
+    console.log(this.visualMovies);
   }
 
 }

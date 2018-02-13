@@ -1,7 +1,7 @@
 <div class="listMovies">
   <div class="row" *ngFor="let chunk of visualMovies">
 
-      <div *ngFor="let movie of movies" class="MovieSheet" >
+      <div *ngFor="let movie of chunk" class="MovieSheet" >
 
           <span class="title">{{movie.original_title}}</span> <br>
           <span class="img"> <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="{{movie.original_title}}">  </span><br>
