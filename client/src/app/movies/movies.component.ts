@@ -22,7 +22,6 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit() {
     this.getMovie();
-    this.getMovieCount();
   }
 
   getMovie() {
@@ -30,13 +29,6 @@ export class MoviesComponent implements OnInit {
       .toPromise()
       .then(result => { this.movies = result; this.generateVisualMovies(); })
       .catch(err => console.log(err));
-  }
-
-  getMovieCount(){
-    return this.http.get('http://localhost:9000/api/movies/count')
-    .toPromise()
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
   }
 
   generateVisualMovies() {
