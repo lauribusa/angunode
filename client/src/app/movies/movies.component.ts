@@ -56,6 +56,7 @@ export class MoviesComponent implements OnInit {
       }
 
     });
+    console.log(this.visualMovies);
   }
 
 }
