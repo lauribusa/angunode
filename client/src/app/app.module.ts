@@ -7,6 +7,15 @@ import { MenuComponent } from './menu/menu.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 
+import { RouterModule, Router, Routes } from '@angular/router';
+
+
+
+export const routes: Routes = [
+  { path: 'movies/:id', component: MovieComponent }
+  // { path: 'movies', component: MoviesComponent },
+
+];
 
 
 @NgModule({
