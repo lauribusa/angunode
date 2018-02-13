@@ -1,18 +1,26 @@
 * {
 	box-sizing: border-box;
 }
-ul {
+.navheader {
   list-style-type: none;
   margin: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #2c3e50;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
-li{
+.navheader li{
   float: left;
 }
 
-li a {
+.navheader li:last-child{
+  float: right;
+}
+
+.navheader li a {
   display: block;
   color: white;
   text-align: center;
@@ -21,7 +29,7 @@ li a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-li a:hover {
+.navheader li a:hover {
   background-color: #111;
   border-bottom: 1px solid red;
 }
