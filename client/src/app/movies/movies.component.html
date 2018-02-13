@@ -1,6 +1,6 @@
 <div class="listMovies">
   <div class="row" *ngFor="let chunk of visualMovies">
-
+    <span>{{count}}</span>
       <div *ngFor="let movie of movies" class="MovieSheet" >
 
           <span class="title">{{movie.original_title}}</span> <br>
