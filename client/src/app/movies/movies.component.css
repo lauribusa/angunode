@@ -6,9 +6,9 @@
 
 .listMovies {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 50px;
-  grid-row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   margin: 50px 0;
   padding: 0;
 }
@@ -24,4 +24,14 @@
 
 span.overview {
   width: 50%;
+  height: 140px;
+  overflow: hidden;
+  margin: 20px 0;
+
+}
+
+
+.img img {
+  display: block;
+  object-fit: cover;
 }
