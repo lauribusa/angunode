@@ -52,4 +52,9 @@ a.buttonMore {
   border: 1px solid;
   padding: 10px;
   color: orange;
+  transition: all 0.3s linear;
+}
+a.buttonMore:hover {
+  background:orange;
+  color:white;
 }
