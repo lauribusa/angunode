@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.http.get('http://localhost:9000/api/movies')
     .toPromise()
-    .then(result => console.log(result)
+    .then(result => console.log(result))
     .catch(err=> console.log(err));
   }
 
