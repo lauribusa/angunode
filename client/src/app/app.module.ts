@@ -1,3 +1,4 @@
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -7,16 +8,11 @@ import { MenuComponent } from './menu/menu.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 
-import { RouterModule, Router, Routes } from '@angular/router';
-
-
-
-export const routes: Routes = [
-  { path: ':id', component: MovieComponent }
-  // { path: 'movies', component: MoviesComponent },
-
+const routes: Routes = [
+  {path: '', redirectTo: 'movies', pathMatch: 'full'},
+  { path: 'toto', component: MovieComponent },
+  { path: 'movies', component: MoviesComponent },
 ];
-
 
 @NgModule({
   declarations: [
@@ -27,7 +23,8 @@ export const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
