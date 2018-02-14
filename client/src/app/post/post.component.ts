@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders} from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
-  })
+    'Content-Type':  'application/json'
+  });
 };
 @Component({
   selector: 'app-post',
@@ -13,15 +12,15 @@ const httpOptions = {
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-
+  body : any;
   constructor(public http: HttpClient) { }
 
   ngOnInit() {
-    this.postMovies(this.body);
+    this.postMovies();
   }
 
-  postMovies(hero){
-    return this.http.post('http://localhost:9000/api/movies', body, any)
+  postMovies(){
+    return this.http.post('http://localhost:9000/api/movies', this.body, httpOptions)
     .toPromise()
     .then(result => { 
       console.log(result);
