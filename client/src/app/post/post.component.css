@@ -1,0 +1,10 @@
+label {
+  float: left;
+
+  width: 100%;
+}
+
+input[type="text"] {
+  float: left;
+  width: 100%;
+}

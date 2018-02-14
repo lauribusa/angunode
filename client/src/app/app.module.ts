@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
+import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'movies', pathMatch: 'full'},
   { path: 'toto', component: MovieComponent },
   { path: 'movies', component: MoviesComponent },
+  { path: 'post', component: PostComponent}
 ];
 
 @NgModule({
@@ -19,7 +21,8 @@ const routes: Routes = [
     AppComponent,
     MenuComponent,
     MoviesComponent,
-    MovieComponent
+    MovieComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
