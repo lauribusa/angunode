@@ -8,12 +8,25 @@ import { MenuComponent } from './menu/menu.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 import { PostComponent } from './post/post.component';
+import { MovieResolver } from './shared/resolvers/movie.resolver';
+import { MoviesResolver } from './shared/resolvers/movies.resolvers';
 
-const routes: Routes = [
-  {path: '', redirectTo: 'movies', pathMatch: 'full'},
-  { path: 'movie/:id', component: MovieComponent },
-  { path: 'movies', component: MoviesComponent },
-  { path: 'post', component: PostComponent}
+const routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'home',
+    component: MoviesComponent,
+    resolve: {
+      movies: MoviesResolver
+    }
+  },
+  {
+    path: 'movie/:id',
+    component: MovieComponent,
+    resolve: {
+      movie: MovieResolver
+    }
+  }
 ];
 
 @NgModule({
