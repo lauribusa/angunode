@@ -10,7 +10,6 @@ import { MovieService } from './shared/movie.service';
 import { MovieComponent } from './movie/movie.component';
 import { MovieResolver } from './shared/resolvers/movie.resolver';
 import { MoviesResolver } from './shared/resolvers/movies.resolvers';
-import { PostComponent } from './post/post.component';
 
 const routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,10 +26,6 @@ const routes = [
     resolve: {
       movie: MovieResolver
     }
-  },
-  {
-    path: 'post',
-    component: MovieComponent,
   }
 ];
 @NgModule({
@@ -38,8 +33,7 @@ const routes = [
     AppComponent,
     MenuComponent,
     MoviesListComponent,
-    MovieComponent,
-    PostComponent
+    MovieComponent
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
   providers: [MovieService, MoviesResolver, MovieResolver],
