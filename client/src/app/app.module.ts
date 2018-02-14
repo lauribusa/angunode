@@ -11,7 +11,7 @@ import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'movies', pathMatch: 'full'},
-  { path: 'toto', component: MovieComponent },
+  { path: 'movie/:id', component: MovieComponent },
   { path: 'movies', component: MoviesComponent },
   { path: 'post', component: PostComponent}
 ];
