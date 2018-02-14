@@ -1,1 +1,14 @@
-<span>lol</span>
+{{movie}}
+<div class="card large">
+  <div class="card-image">
+    <img src="https://image.tmdb.org/t/p//w500/{{movie.poster_path}}">
+    <span class="card-title">{{movie.title}}</span>
+  </div>
+  <div *ngIf="unique" class="card-content">
+    <p>{{movie.overview}}</p>
+    <p>{{movie.release_date}}</p>
+  </div>
+  <div class="card-action">
+    <a href="#">details</a>
+  </div>
+</div>

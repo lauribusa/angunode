@@ -1,9 +1,9 @@
 const Movie = require('../models/movie');
 module.exports = {
-  method: 'DELETE',
+  method: 'GET',
   path: '/api/movies/{id}',
   handler: async (req, h) => {
-    await Movie.findOneAndRemove({ id: req.params.id });
-    return 'movie deleted';
+    let movie = await Movie.find({ id: req.params.id });
+    return movie;
   }
 };

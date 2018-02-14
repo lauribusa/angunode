@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '../shared/models/movie.model';
+import { Resolve, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
@@ -8,14 +8,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
-  id: string;
+  id: number;
+  unique: Boolean;
+  @Input() movie: Movie;
   constructor(private route: ActivatedRoute) {
-    route.params.subscribe(params => {
-      this.id = params['id'];
-    });
+    this.unique = false;
   }
 
   ngOnInit() {
+    if (!this.movie) {
+      this.unique = true;
+      this.movie = this.route.snapshot.data['movie'];
+    }
   }
-
 }
