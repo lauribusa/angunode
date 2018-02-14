@@ -8,6 +8,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 
 import { RouterModule, Router, Routes } from '@angular/router';
+import { PostComponent } from './post/post.component';
 
 
 
@@ -23,7 +24,8 @@ export const routes: Routes = [
     AppComponent,
     MenuComponent,
     MoviesComponent,
-    MovieComponent
+    MovieComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
