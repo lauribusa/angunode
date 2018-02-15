@@ -4,7 +4,7 @@ import { HttpHeaders } from '@angular/common/http';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
-  });
+  })
 };
 @Component({
   selector: 'app-post',
@@ -22,7 +22,7 @@ export class PostComponent implements OnInit {
   postMovies(){
     return this.http.post('http://localhost:9000/api/movies', this.body, httpOptions)
     .toPromise()
-    .then(result => { 
+    .then(result => {
       console.log(result);
     })
     .catch(err => console.log(err));
